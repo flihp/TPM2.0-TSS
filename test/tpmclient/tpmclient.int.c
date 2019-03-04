@@ -862,36 +862,6 @@ static void TestHierarchyControl()
     CheckPassed( rval );
 }
 
-static TSS2_RC DefineNvIndex( TPMI_RH_PROVISION authHandle, TPMI_SH_AUTH_SESSION sessionAuthHandle, TPM2B_AUTH *auth, TPM2B_DIGEST *authPolicy,
-    TPMI_RH_NV_INDEX nvIndex, TPMI_ALG_HASH nameAlg, TPMA_NV attributes, UINT16 size  )
-{
-    TSS2_RC rval = TPM2_RC_SUCCESS;
-    TPM2B_NV_PUBLIC publicInfo;
-
-    /* Command and response session data structures. */
-    TSS2L_SYS_AUTH_RESPONSE sessionsDataOut;
-    TSS2L_SYS_AUTH_COMMAND sessionsData = { .count = 1, .auths = {{
-        .sessionHandle = TPM2_RS_PW,
-        .sessionAttributes = 0,
-        .nonce = {.size = 0},
-        .hmac = {.size = 0}}}};
-
-    attributes |= TPMA_NV_ORDERLY;
-
-    /* Init public info structure. */
-    publicInfo.size = 0;
-    publicInfo.nvPublic.attributes = attributes;
-    CopySizedByteBuffer((TPM2B *)&publicInfo.nvPublic.authPolicy, (TPM2B *)authPolicy);
-    publicInfo.nvPublic.dataSize = size;
-    publicInfo.nvPublic.nvIndex = nvIndex;
-    publicInfo.nvPublic.nameAlg = nameAlg;
-
-    /* Create the index */
-    rval = Tss2_Sys_NV_DefineSpace( sysContext, authHandle, &sessionsData, auth, &publicInfo, &sessionsDataOut );
-
-    return rval;
-}
-
 typedef struct {
     char name[50];
     TSS2_RC (*buildPolicyFn )( TSS2_SYS_CONTEXT *sysContext, SESSION *trialPolicySession, TPM2B_DIGEST *policyDigest );
@@ -988,7 +958,7 @@ static TSS2_RC CreateNVIndex( TSS2_SYS_CONTEXT *sysContext, SESSION **policySess
     nvAttributes |= TPMA_NV_POLICYWRITE;
     nvAttributes |= TPMA_NV_PLATFORMCREATE;
 
-    rval = DefineNvIndex( TPM2_RH_PLATFORM, TPM2_RS_PW, &nvAuth, policyDigest,
+    rval = DefineNvIndex( sysContext, TPM2_RH_PLATFORM, &nvAuth, policyDigest,
             TPM20_INDEX_PASSWORD_TEST, TPM2_ALG_SHA256, nvAttributes, 32  );
     CheckPassed( rval );
 
@@ -1871,7 +1841,7 @@ static void SimpleHmacOrPolicyTest( bool hmacTest )
     nvAttributes |= TPMA_NV_PLATFORMCREATE;
 
     /* Create the NV index. */
-    rval = DefineNvIndex( TPM2_RH_PLATFORM, TPM2_RS_PW,
+    rval = DefineNvIndex( simpleTestContext, TPM2_RH_PLATFORM,
             &nvAuth, &authPolicy, TPM20_INDEX_PASSWORD_TEST,
             TPM2_ALG_SHA256, nvAttributes, 32  );
     CheckPassed( rval );
@@ -2374,7 +2344,7 @@ static void GetSetEncryptParamTests()
     nvAttributes |= TPMA_NV_AUTHWRITE;
     nvAttributes |= TPMA_NV_PLATFORMCREATE;
 
-    rval = DefineNvIndex( TPM2_RH_PLATFORM, TPM2_RS_PW, &nvAuth, &authPolicy,
+    rval = DefineNvIndex( sysContext, TPM2_RH_PLATFORM, &nvAuth, &authPolicy,
             TPM20_INDEX_PASSWORD_TEST, TPM2_ALG_SHA1, nvAttributes, 32  );
     CheckPassed( rval ); /* #4 */
 
