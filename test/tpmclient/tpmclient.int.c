@@ -2542,7 +2542,8 @@ test_invoke (TSS2_SYS_CONTEXT *sapi_context)
     TestDictionaryAttackLockReset();
     TestHierarchyControl();
     GetSetEncryptParamTests();
-    SimpleHmacOrPolicyTest( true );
+    SimpleHmacOrPolicyTest (true);
+    SimpleHmacOrPolicyTest (false);
     TestTpmGetCapability();
     TestPcrExtend();
     TestHash();
