@@ -28,6 +28,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tss2-tcti-tbs", "src\tss2-t
 		{A6D8F061-6827-492F-80C3-32C4DD4FC52E} = {A6D8F061-6827-492F-80C3-32C4DD4FC52E}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tbs-get-eventlog", "src\tbs-get-eventlog\tbs-get-eventlog.vcxproj", "{70C5A66E-074E-4A09-9385-A8A51485DC5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -76,6 +78,14 @@ Global
 		{6BA6146F-8B38-49A2-A156-769E0F2CC302}.Release|x64.Build.0 = Release|x64
 		{6BA6146F-8B38-49A2-A156-769E0F2CC302}.Release|x86.ActiveCfg = Release|Win32
 		{6BA6146F-8B38-49A2-A156-769E0F2CC302}.Release|x86.Build.0 = Release|Win32
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Debug|x64.ActiveCfg = Debug|x64
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Debug|x64.Build.0 = Debug|x64
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Debug|x86.ActiveCfg = Debug|Win32
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Debug|x86.Build.0 = Debug|Win32
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x64.ActiveCfg = Release|x64
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x64.Build.0 = Release|x64
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x86.ActiveCfg = Release|Win32
+		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
