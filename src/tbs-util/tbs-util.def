@@ -1,0 +1,12 @@
+LIBRARY tbs-util
+EXPORTS
+    get_tbs_ctx
+    free_tbs_ctx
+    get_sys_ctx
+    free_sys_ctx
+    is_pcr_selected
+    foreach_selection
+    deselect_pcr
+    dump_buf
+    get_alg_size
+    get_alg_name

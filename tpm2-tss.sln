@@ -30,6 +30,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tss2-tcti-tbs", "src\tss2-t
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tbs-get-eventlog", "src\tbs-get-eventlog\tbs-get-eventlog.vcxproj", "{70C5A66E-074E-4A09-9385-A8A51485DC5A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tbs-tss2-get-pcrs", "src\tbs-tss2-get-pcrs\tbs-tss2-get-pcrs.vcxproj", "{709282B7-737B-46F5-A5B0-22BED9F3D002}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6BA6146F-8B38-49A2-A156-769E0F2CC302} = {6BA6146F-8B38-49A2-A156-769E0F2CC302}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tbs-util", "src\tbs-util\tbs-util.vcxproj", "{FEE54DC4-FC2B-475B-894F-851BAB26DB78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -86,6 +93,22 @@ Global
 		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x64.Build.0 = Release|x64
 		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x86.ActiveCfg = Release|Win32
 		{70C5A66E-074E-4A09-9385-A8A51485DC5A}.Release|x86.Build.0 = Release|Win32
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Debug|x64.ActiveCfg = Debug|x64
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Debug|x64.Build.0 = Debug|x64
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Debug|x86.ActiveCfg = Debug|Win32
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Debug|x86.Build.0 = Debug|Win32
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Release|x64.ActiveCfg = Release|x64
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Release|x64.Build.0 = Release|x64
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Release|x86.ActiveCfg = Release|Win32
+		{709282B7-737B-46F5-A5B0-22BED9F3D002}.Release|x86.Build.0 = Release|Win32
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Debug|x64.ActiveCfg = Debug|x64
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Debug|x64.Build.0 = Debug|x64
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Debug|x86.ActiveCfg = Debug|Win32
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Debug|x86.Build.0 = Debug|Win32
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Release|x64.ActiveCfg = Release|x64
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Release|x64.Build.0 = Release|x64
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Release|x86.ActiveCfg = Release|Win32
+		{FEE54DC4-FC2B-475B-894F-851BAB26DB78}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
