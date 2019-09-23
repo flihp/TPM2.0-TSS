@@ -8,7 +8,7 @@
 #ifndef TSS2_ENDIAN_H
 #define TSS2_ENDIAN_H
 
-#if defined(__linux__) || defined(__unix__)
+#if !defined(LOCAL_ENDIAN) && (defined(__linux__) || defined(__unix__))
 #if defined(__FreeBSD__)
 #include <sys/endian.h>
 #else
