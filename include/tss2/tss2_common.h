@@ -15,16 +15,36 @@
 /*
  * Type definitions
  */
+#ifndef HAVE_UINT8
 typedef uint8_t     UINT8;
+#endif
+#ifndef HAVE_BYTE
 typedef uint8_t     BYTE;
+#endif
+#ifndef HAVE_INT8
 typedef int8_t      INT8;
+#endif
+#ifndef HAVE_BOOL
 typedef int         BOOL;
+#endif
+#ifndef HAVE_UINT16
 typedef uint16_t    UINT16;
+#endif
+#ifndef HAVE_INT16
 typedef int16_t     INT16;
+#endif
+#ifndef HAVE_UINT32
 typedef uint32_t    UINT32;
+#endif
+#ifndef HAVE_INT32
 typedef int32_t     INT32;
+#endif
+#ifndef HAVE_UINT64
 typedef uint64_t    UINT64;
+#endif
+#ifndef HAVE_INT64
 typedef int64_t     INT64;
+#endif
 
 /*
  * ABI runtime negotiation definitions
