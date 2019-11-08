@@ -9,7 +9,7 @@
 
 #include <stdlib.h>
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 
 #define KEY_VALUE_INIT { \
     .key = NULL, \

@@ -345,6 +345,19 @@ AM_CONDITIONAL([PTPMMANDATORY],[test "x$enable_ptpm_mandatory" = "xyes"])
 
 AM_CONDITIONAL([TESTPTPM],[test "x$with_ptpm_set" = xyes])
 
+AC_ARG_WITH([tpm2types],
+            [AS_HELP_STRING([--with-tpm2types=<file>],[Path to header where TPM2 types are defined])])
+AS_IF([test -z $with_tpm2types],
+      [tpm2types_header="tss2_tpm2_types.h"
+       AC_MSG_RESULT([using default TPM2 types header: $tpm2types_header])],
+      [AC_CHECK_FILE([$with_tpm2types],
+                     [tpm2types_header=$with_tpm2types
+                      AC_MSG_RESULT([found TPM2 types header: $tpm2types_header])],
+                     [AC_MSG_ERROR([Failed to locate TPM2 types header: $with_tpm2types])])])
+AC_DEFINE_UNQUOTED([TPM2TYPES_HEADER],
+          ["$tpm2types_header"],
+          [header defining TPM2 types])
+
 dnl --------- Doxy Gen -----------------------
 DX_DOXYGEN_FEATURE(ON)
 DX_DOT_FEATURE(OFF)

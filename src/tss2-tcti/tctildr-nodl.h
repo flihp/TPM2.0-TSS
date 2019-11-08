@@ -5,7 +5,7 @@
 #ifndef TCTILDR_NODL_H
 #define TCTILDR_NODL_H
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_tcti.h"
 
 TSS2_RC

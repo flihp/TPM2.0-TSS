@@ -7,7 +7,7 @@
 #define ESYS_CRYPTO_H
 
 #include <stddef.h>
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2-sys/sysapi_util.h"
 #ifdef OSSL
 #include "esys_crypto_ossl.h"

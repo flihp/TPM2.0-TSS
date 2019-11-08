@@ -6,7 +6,7 @@
 #ifndef TCTILDR_H
 #define TCTILDR_H
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_tcti.h"
 
 #define TCTI_SUFFIX ".so"

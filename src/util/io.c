@@ -20,7 +20,7 @@
 #include <unistd.h>
 #endif
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 
 #include "io.h"
 #define LOGMODULE tcti

@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_tcti.h"
 
 #include "tcti-common.h"

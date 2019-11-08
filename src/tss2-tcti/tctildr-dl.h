@@ -5,7 +5,7 @@
 #ifndef TCTILDR_DL_H
 #define TCTILDR_DL_H
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_tcti.h"
 
 const TSS2_TCTI_INFO*

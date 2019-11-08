@@ -24,7 +24,7 @@ typedef SSIZE_T ssize_t;
 #define SOCKET_ERROR - 1
 #endif
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 
 #ifdef _WIN32
 #define TEMP_RETRY(dest, exp) \

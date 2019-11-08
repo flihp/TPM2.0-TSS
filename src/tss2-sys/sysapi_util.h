@@ -8,7 +8,7 @@
 #define TSS2_SYSAPI_UTIL_H
 #include <stdbool.h>
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_tcti.h"
 #include "tss2_sys.h"
 #include "util/tpm2b.h"

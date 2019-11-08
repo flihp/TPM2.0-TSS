@@ -10,7 +10,7 @@
 
 #include <stdlib.h>
 #include "tss2_common.h"
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 
 #ifndef TSS2_API_VERSION_1_2_1_108
 #error Version mismatch among TSS2 header files.

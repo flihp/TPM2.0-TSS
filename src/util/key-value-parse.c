@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 
 #include "util/key-value-parse.h"
 #define LOGMODULE tcti

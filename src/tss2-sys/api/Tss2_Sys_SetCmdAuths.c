@@ -11,7 +11,7 @@
 #include <string.h>
 
 #include "util/tss2_endian.h"
-#include "tss2_tpm2_types.h"
+#include TPM2TYPES_HEADER
 #include "tss2_mu.h"
 #include "sysapi_util.h"
 
